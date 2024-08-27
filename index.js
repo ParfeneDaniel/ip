@@ -14,6 +14,4 @@ app.get("/", (req, res) => {
   return res.json({ ip });
 });
 
-app.listen(3000, () => {
-  console.log("Server is running");
-});
+module.exports = app;
