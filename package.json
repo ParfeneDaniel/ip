@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.19.2",
-    "express-rate-limit": "^7.4.0",
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.4",
+    "rate-limiter-flexible": "^5.0.3",
+    "redis": "^4.7.0"
   }
 }
