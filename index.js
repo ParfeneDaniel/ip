@@ -2,7 +2,7 @@ const express = require("express");
 const { rateLimit } = require("express-rate-limit");
 
 const limiter = rateLimit({
-  windowMs: 60 * 1000,
+  windowMs: 3 * 60 * 1000,
   limit: 5,
 });
 
@@ -12,7 +12,7 @@ app.use(limiter);
 
 app.get("/", (req, res) => {
   try {
-    const IP = req.headers["x-real-ip"];
+    const IP = req.socket.remoteAddress;
     return res.status(200).json({ IP });
   } catch (error) {
     return res.status(500).json({ message: "Internal Server Error" });
