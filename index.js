@@ -1,14 +1,7 @@
 const express = require("express");
-const { rateLimit } = require("express-rate-limit");
-
-const limiter = rateLimit({
-  windowMs: 60 * 1000,
-  limit: 5,
-});
 
 const app = express();
 app.use(express.json());
-app.use(limiter);
 
 app.get("/", (req, res) => {
   try {
