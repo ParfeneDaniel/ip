@@ -12,7 +12,7 @@ app.use(limiter);
 
 app.get("/", (req, res) => {
   try {
-    const IP = req.socket.remoteAddress;
+    const IP = req.headers["x-real-ip"];
     return res.status(200).json({ IP });
   } catch (error) {
     return res.status(500).json({ message: "Internal Server Error" });
